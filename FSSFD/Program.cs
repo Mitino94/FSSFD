@@ -9,11 +9,31 @@ namespace FSSFD
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
 
-            Console.WriteLine("Введите два числа через запятую");
+            Console.WriteLine("Введите первое число!");
 
-            int[] twoNumbers = Console.ReadLine().Split(',').Select(x => int.Parse(x)).ToArray();
+            if (!int.TryParse(Console.ReadLine(), out int firstNumber))
+            {
+                Console.WriteLine("Число введено неверно!");
 
-            Console.WriteLine($"Сумма ваших волшебных чисел равна {twoNumbers[0] + twoNumbers[1]}");
+                Console.ReadLine();
+
+                return;
+            }
+
+            Console.WriteLine("Введите второе число!");
+
+            if (!int.TryParse(Console.ReadLine(), out int secondNumber))
+            {
+                Console.WriteLine("Число введено неверно!");
+
+                Console.ReadLine();
+
+                return;
+            }
+
+            Console.WriteLine($"Сумма ваших чисел равна {firstNumber + secondNumber}");
+            Console.WriteLine($"Разность ваших чисел равна {firstNumber - secondNumber}");
+            Console.WriteLine($"Произведение ваших чисел равна {firstNumber * secondNumber}");
 
             Console.ReadLine();
         }
