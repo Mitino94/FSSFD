@@ -7,6 +7,8 @@ namespace FSSFD
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+
             Console.WriteLine("Введите два числа через запятую");
 
             int[] twoNumbers = Console.ReadLine().Split(',').Select(x => int.Parse(x)).ToArray();
